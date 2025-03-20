@@ -16,7 +16,13 @@ function saveTasks($tasks) {
 
 function addTask($description) {
     $tasks = loadTasks();
-    $id = count($tasks) + 1;
+    $maxId = 0;
+    foreach ($tasks as $task) {
+        if ($task['id'] > $maxId) {
+            $maxId = $task['id'];
+        }
+    }
+    $id = $maxId + 1;
     $newTask = [
         'id' => $id,
         'description' => $description,
