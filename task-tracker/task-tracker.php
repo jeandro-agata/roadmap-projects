@@ -119,7 +119,7 @@ function listTasks($status = null) {
 }
 
 if ($argc < 2) {
-    echo "Usage: php task-cli.php [command] [arguments]\n";
+    echo "Usage: php task-tracker.php [command] [arguments]\n";
     exit(1);
 }
 
@@ -128,7 +128,7 @@ $command = $argv[1];
 switch ($command) {
     case 'add':
         if ($argc < 3) {
-            echo "Usage: php task-cli.php add \"Task description\"\n";
+            echo "Usage: php task-tracker.php add \"Task description\"\n";
             exit(1);
         }
         $description = $argv[2];
@@ -137,7 +137,7 @@ switch ($command) {
 
     case 'update':
         if ($argc < 4) {
-            echo "Usage: php task-cli.php update [id] \"Updated task description\"\n";
+            echo "Usage: php task-tracker.php update [id] \"Updated task description\"\n";
             exit(1);
         }
         $id = (int) $argv[2];
@@ -147,7 +147,7 @@ switch ($command) {
 
     case 'delete':
         if ($argc < 3) {
-            echo "Usage: php task-cli.php delete [id]\n";
+            echo "Usage: php task-tracker.php delete [id]\n";
             exit(1);
         }
         $id = (int) $argv[2];
@@ -156,7 +156,7 @@ switch ($command) {
 
     case 'mark-in-progress':
         if ($argc < 3) {
-            echo "Usage: php task-cli.php mark-in-progress [id]\n";
+            echo "Usage: php task-tracker.php mark-in-progress [id]\n";
             exit(1);
         }
         $id = (int) $argv[2];
@@ -165,7 +165,7 @@ switch ($command) {
 
     case 'mark-done':
         if ($argc < 3) {
-            echo "Usage: php task-cli.php mark-done [id]\n";
+            echo "Usage: php task-tracker.php mark-done [id]\n";
             exit(1);
         }
         $id = (int) $argv[2];
@@ -174,7 +174,7 @@ switch ($command) {
 
     case 'list':
         if ($argc > 3) {
-            echo "Usage: php task-cli.php list [status]\n";
+            echo "Usage: php task-tracker.php list [status]\n";
             exit(1);
         }
         $status = isset($argv[2]) ? $argv[2] : null;
